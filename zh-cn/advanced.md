@@ -25,7 +25,7 @@ microApp.start({
       credentials: 'include', // 请求时带上cookie
     }
 
-    return fetch(url, Object.assign(options, config)).then((res) => {
+    return window.fetch(url, Object.assign(options, config)).then((res) => {
       return res.text()
     })
   }
@@ -230,8 +230,8 @@ function mount () {
 
 // 👇 将卸载操作放入 unmount 函数
 function unmount () {
-  app.unmount()
-  history.destroy()
+  app?.unmount()
+  history?.destroy()
   app = null
   router = null
   history = null
@@ -274,7 +274,7 @@ async function mount () {
 function unmount () {
   app?.destroy();
   // 清空根元素，如果根元素不是app-root，根据实际情况调整
-  document.querySelector('app-root').innerHTML = '';
+  document.querySelector('app-root')?.innerHTML = '';
   app = null;
 }
 
@@ -317,8 +317,8 @@ function mount () {
 
 // 👇 将卸载操作放入 unmount 函数
 function unmount () {
-  app.unmount()
-  history.destroy()
+  app?.unmount()
+  history?.destroy()
   app = null
   router = null
   history = null
@@ -328,6 +328,29 @@ function unmount () {
 if (如果是微前端环境) {
   // 应用的name值，即 <micro-app> 元素的name属性值
   window[`micro-app-${应用的name值}`] = { mount, unmount }
+} else {
+  // 非微前端环境直接渲染
+  mount()
+}
+```
+
+#### ** 其它 **
+```js
+// entry.js
+
+// 👇 将渲染操作放入 mount 函数
+function mount () {
+  ...
+}
+
+// 👇 将卸载操作放入 unmount 函数
+function unmount () {
+  ...
+}
+
+// 微前端环境下，注册mount和unmount方法
+if (window.__MICRO_APP_ENVIRONMENT__) {
+  window[`micro-app-${window.__MICRO_APP_NAME__}`] = { mount, unmount }
 } else {
   // 非微前端环境直接渲染
   mount()

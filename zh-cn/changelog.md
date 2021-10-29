@@ -8,6 +8,32 @@
 
 ---
 
+### 0.4.2
+
+`2021-10-29`
+
+- **New**
+
+  - 🆕 新增了数据通信中`getGlobalData`方法，用于主动获取全局数据
+  - 🆕 新增了对`mount`, `unmount`方法promise类型的支持
+  - 🆕 新增了`destroy`配置项，用于替换`destory`，但依然保持对低版本的兼容
+
+- **Bug Fix**
+
+  - 🐞 修复了umd模式下，react16及以下版本二次渲染后路由跳转刷新页面的问题
+  - 🐞 修复了SSR子应用二次渲染时url不同导致渲染失败的问题
+  - 🐞 修复了 react-inlinesvg 无法正常渲染的问题，fix [#56](https://github.com/micro-zoe/micro-app/issues/56)
+  - 🐞 修复了 safari 浏览器中，创建module脚本错误的问题
+  - 🐞 修复了子应用通过defineProperty重写document.onclick时报错的问题
+
+- **Update**
+
+  - 🚀 优化了MicroAppElement、沙箱等代码
+  - 🚀 优化了umd模式下，子应用初次渲染的速度
+  - 🚀 优化了动态创建的script元素src或textContent为空时的处理逻辑
+  - 🚀 优化了`mounted`生命周期的执行时机
+
+
 ### 0.4.1
 
 `2021-10-22`
