@@ -43,10 +43,10 @@
 > [!NOTE]
 > 开启inline后会稍微损耗性能，一般在开发环境中使用。
 
-## destory
+## destroy
 - Desc: `卸载时是否强制删除缓存资源`
 - Default: `false`
-- 使用方式: `<micro-app name='xx' url='xx' destory></micro-app>`
+- 使用方式: `<micro-app name='xx' url='xx' destroy></micro-app>`
 
 默认情况下，子应用被卸载后会缓存静态资源，以便在重新渲染时获得更好的性能。
 
@@ -101,6 +101,14 @@ shadowDOM具有更强的样式隔离能力，开启后，`<micro-app>`标签会�
 
 当子应用是ssr应用时，需要设置ssr属性，此时micro-app会根据ssr模式加载子应用。
 
+## keep-alive
+- Desc: `是否开启keep-alive模式`
+- Type: `string(boolean)`
+- Default: `false`
+- 使用方式: `<micro-app name='xx' url='xx' keep-alive></micro-app>`
+
+开启keep-alive后，应用卸载时会进入缓存，而不是销毁它们，以便保留应用的状态和提升重复渲染的性能。
+
 ## 全局配置
 全局配置会影响每一个子应用，请小心使用！
 
@@ -111,7 +119,7 @@ import microApp from '@micro-zoe/micro-app'
 
 microApp.start({
   inline: true, // 默认值false
-  destory: true, // 默认值false
+  destroy: true, // 默认值false
   disableScopecss: true, // 默认值false
   disableSandbox: true, // 默认值false
   shadowDOM: true, // 默认值false
@@ -125,7 +133,7 @@ microApp.start({
   name='xx' 
   url='xx' 
   inline='false'
-  destory='false'
+  destroy='false'
   disableScopecss='false'
   disableSandbox='false'
   shadowDOM='false'
