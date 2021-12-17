@@ -8,6 +8,26 @@
 
 ---
 
+### 0.6.1
+
+`2021-12-17`
+
+- **New**
+
+  - 🆕 新增了`unmountApp`, `unmountAllApps`方法，用于主动卸载应用。
+  - 🆕 新增了对`disable-sandbox`, `disable-scopecss`配置的支持。
+
+- **Bug Fix**
+
+  - 🐞 修复了通过`new Image()`创建的元素逃离沙箱的问题，fix [#186](https://github.com/micro-zoe/micro-app/issues/186)，PR [#187](https://github.com/micro-zoe/micro-app/pull/187) by [asiainfoliwei](https://github.com/asiainfoliwei)。
+  - 🐞 修复了通过`cloneNode`创建的元素逃离沙箱的问题。
+
+- **Update**
+
+  - 🚀 优化了元素隔离patch原型链方法相关代码。
+  - 🚀 优化了kee-alive和destory相关的处理逻辑。
+  - 🚀 优化了`unmount`生命周期的触发时机，移动到应用彻底卸载后执行。
+
 ### 0.6.0
 
 `2021-12-10`
