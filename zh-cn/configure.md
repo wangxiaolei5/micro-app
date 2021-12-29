@@ -50,7 +50,7 @@
 
 默认情况下，子应用被卸载后会缓存静态资源，以便在重新渲染时获得更好的性能。
 
-开启destory，子应用在卸载后会清空缓存资源，再次渲染时重新请求数据。
+开启destroy，子应用在卸载后会清空缓存资源，再次渲染时重新请求数据。
 
 ## disableScopecss
 - Desc: `禁用样式隔离`
@@ -98,7 +98,7 @@
 
 开启keep-alive后，应用卸载时会进入缓存，而不是销毁它们，以便保留应用的状态和提升重复渲染的性能。
 
-keep-alive的优先级小于[destory](/zh-cn/configure?id=destroy)，当两者同时存在时，keep-alive将失效。
+keep-alive的优先级小于[destroy](/zh-cn/configure?id=destroy)，当两者同时存在时，keep-alive将失效。
 
 ## shadowDOM
 - Desc: `是否开启shadowDOM`
@@ -108,7 +108,7 @@ keep-alive的优先级小于[destory](/zh-cn/configure?id=destroy)，当两者�
 
 shadowDOM具有更强的样式隔离能力，开启后，`<micro-app>`标签会成为一个真正的WebComponent。
 
-但shadowDOM在React框架及一些UI库中的兼容不是很好，请谨慎使用。
+但shadowDOM在React框架及一些UI库中的兼容不是很好，经常会出现一些不可预料的问题，除非你很清楚它会带来的问题并有信心解决，否则不建议使用。
 
 
 ## 全局配置
