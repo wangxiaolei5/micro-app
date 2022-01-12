@@ -2,6 +2,17 @@
 ## 一、样式隔离
 MicroApp的样式隔离是默认开启的，开启后会以`<micro-app>`标签作为样式作用域，利用标签的`name`属性为每个样式添加前缀，将子应用的样式影响禁锢在当前标签区域。
 
+```css
+.test {
+  color: red;
+}
+
+/* 转换为 */
+micro-app[name=xxx] .test {
+  color: red;
+}
+```
+
 但基座应用的样式依然会对子应用产生影响，如果发生样式污染，推荐通过约定前缀或CSS Modules方式解决。
 
 ## 二、禁用样式隔离
@@ -16,11 +27,12 @@ import microApp from '@micro-zoe/micro-app'
 microApp.start({
   disableScopecss: true, // 默认值false
 })
-
-// 如果希望在某个应用中不受全局配置控制，可以设置`disableScopecss='false'`：
-// <micro-app name='xx' url='xx' disableScopecss='false'></micro-app>
 ```
 
+如果希望在某个应用中不受全局配置控制，可以设置`disableScopecss='false'`
+```html
+<micro-app name='xx' url='xx' disableScopecss='false'></micro-app>
+```
 
 #### 2、在某一个应用中禁用
 
@@ -34,7 +46,7 @@ microApp.start({
 可以在你的css文件中使用以下格式的注释来禁用样式隔离：
 ```css
 /* ! scopecss-disable */
-.test {
+.test1 {
   color: red;
 }
 /* ! scopecss-enable */

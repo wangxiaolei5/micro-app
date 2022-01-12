@@ -14,13 +14,13 @@
 
 - **Bug Fix**
 
-  - 🐞 修复了element-plus部分组件逃离元素隔离的问题, issue [#223](https://github.com/micro-zoe/micro-app/issues/223)。
-  - 🐞 修复了在使用IE6、7 CSSHack时样式解析失败的问题, issue [#232](https://github.com/micro-zoe/micro-app/issues/223)。
+  - 🐞 Fix bug of element-plus dom escape from micro-app element, issue [#157](https://github.com/micro-zoe/micro-app/issues/157), [#121](https://github.com/micro-zoe/micro-app/issues/121).
+  - 🐞 Fix bug of parser style error when using IE6 and 7 csshack, issue [#232](https://github.com/micro-zoe/micro-app/issues/223).
 
 - **Update**
 
-  - 🚀 优化了插件相关代码和逻辑, PR [#224](https://github.com/micro-zoe/micro-app/pull/224) by [LinFeng1997](https://github.com/LinFeng1997)。
-  - 🚀 优化了沙箱相关代码和逻辑。
+  - 🚀 Optimized plugins logic and code, PR [#224](https://github.com/micro-zoe/micro-app/pull/224) by [LinFeng1997](https://github.com/LinFeng1997).
+  - 🚀 Optimized sandbox logic and code.
 
 
 ### 0.8.0
